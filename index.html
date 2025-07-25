@@ -16,7 +16,7 @@
 
   <style>
     body {
-      font-family: Arial, sans-serif; 
+      font-family: Inter, Arial, sans-serif; 
       background: #10161F; 
       color: #FFF; 
       margin: 0; 
@@ -96,23 +96,41 @@
   </style>
 </head>
 <body>
-  <h1>TON Connect Examples</h1>
+  <h1>TON Connect demo</h1>
   <p>Complete examples of TON Connect functionality</p>
 
   <!-- TON Connect -->
   <div class="section">
-    <h2>1. Connect Wallet</h2>
+    <h2>1. Connect wallet</h2>
     <div id="ton-connect"></div>
     <div id="wallet-info"></div>
   </div>
 
   <!-- Simple Transactions -->
   <div class="section">
-    <h2>2. Simple Transactions</h2>
+    <h2>2. Simple transactions</h2>
     <button id="btn-multi">Send 0.2 TON to self + 0.1 TON x2 to another address</button>
     <button id="btn-comment">Send 0.2 TON with comment</button>
     
-    <h3>Address Converter</h3>
+  </div>
+
+  <!-- Contract Info -->
+  <div class="section">
+    <h2>3. Smart contract deployment</h2>
+    <button id="btn-generate-contract">Generate Contract Info</button>
+    <div id="contract-info"></div>
+    <button id="btn-deploy-contract" disabled>Deploy Doge Contract</button>
+    <div id="deploy-status"></div>
+  </div>
+
+  <!-- Transaction Log -->
+  <div class="section">
+    <h2>4. Log</h2>
+    <button id="btn-clear-log">Clear Log</button>
+    <div id="log"></div>
+
+    <!-- Address Converter moved here -->
+    <h3 style="margin-top:30px;">Address Converter</h3>
     <input type="text" id="address-input" placeholder="Enter TON address in any format" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #444; border-radius: 5px; background: #2A3441; color: #FFF; font-size: 14px;">
     <button id="btn-convert-address">Convert Address</button>
     <div id="conversion-result"></div>
@@ -126,22 +144,6 @@
       - <strong>Bounceable (kQ...):</strong> At the moment, this does not work in testnet, use mainnet address<br>
       - <strong>Non-bounceable (0Q...):</strong> Transaction is final even if address doesn't exist<br>
     </div>
-  </div>
-
-  <!-- Contract Info -->
-  <div class="section">
-    <h2>3. Smart Contract Deployment</h2>
-    <button id="btn-generate-contract">Generate Contract Info</button>
-    <div id="contract-info"></div>
-    <button id="btn-deploy-contract" disabled>Deploy Doge Contract</button>
-    <div id="deploy-status"></div>
-  </div>
-
-  <!-- Transaction Log -->
-  <div class="section">
-    <h2>4. Transaction Log</h2>
-    <button id="btn-clear-log">Clear Log</button>
-    <div id="log"></div>
   </div>
 
   <script>
